@@ -8,5 +8,11 @@
         <item name="colorOnPrimary">@color/white</item>
 
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <item name="colorControlNormal">@color/black</item>
+        <item name="strokeFilmCard">@color/gray_500</item>
+
+        <item name="textAppearanceHeadline5">@style/TextAppearance.FilmApp.Headline5</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.FilmApp.Body2</item>
     </style>
 </resources>
