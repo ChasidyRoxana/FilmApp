@@ -1,5 +1,6 @@
 package com.example.filmapp.base
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,7 +10,9 @@ abstract class BaseViewModel<ViewState : BaseViewState>(
     private val initViewState: ViewState
 ) : ViewModel() {
 
-    val viewState: MutableLiveData<ViewState> by lazy { MutableLiveData(initViewState) }
+    private val _viewState: MutableLiveData<ViewState> by lazy { MutableLiveData(initViewState) }
+    val viewState: LiveData<ViewState>
+        get() = _viewState
 
     abstract suspend fun reduce(event: Event, previousState: ViewState): ViewState?
 
@@ -25,11 +28,7 @@ abstract class BaseViewModel<ViewState : BaseViewState>(
         viewModelScope.launch {
             val newViewState = reduce(event, viewState.value ?: initViewState)
             if (newViewState != null && newViewState != viewState.value) {
-                viewState.value = newViewState
+                _viewState.value = newViewState
             }
         }
-
-    companion object {
-
-    }
 }

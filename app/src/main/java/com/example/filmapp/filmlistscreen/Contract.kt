@@ -9,8 +9,7 @@ data class FilmListViewState(
     val filmList: List<FilmUi> = emptyList(),
     val error: Throwable? = null,
 ) : BaseViewState {
-    val isEmptyErrorVisible
-        get() = filmList.isEmpty() && status != STATUS.LOAD
+    val isEmptyErrorVisible = filmList.isEmpty() && status != STATUS.LOAD
 }
 
 sealed class UiEvent : Event {

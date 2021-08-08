@@ -4,6 +4,6 @@
 
     <string name="cd_poster">Постер</string>
     <string name="cd_app_icon">Иконка приложения</string>
-    <string name="text_empty">Здесь пока что инчего нет :с</string>
+    <string name="text_empty">Здесь пока что ничего нет :с</string>
     <string name="error_message">Что-то пошло не так</string>
 </resources>
