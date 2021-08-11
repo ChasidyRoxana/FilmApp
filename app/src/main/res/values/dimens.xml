@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
     <dimen name="corner_radius_default">12dp</dimen>
+
+    <dimen name="size_app_bar">400dp</dimen>
+    <dimen name="size_poster">300dp</dimen>
 </resources>

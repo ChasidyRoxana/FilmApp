@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/padding_default"
+        android:paddingTop="@dimen/padding_default"
+        android:paddingBottom="84dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFilmName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAppearance="?textAppearanceHeadline1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Унесенные призраками" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintTop_toBottomOf="@id/tvFilmName"
+            tools:text="@string/text_rating" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGenres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintTop_toBottomOf="@id/tvRating"
+            tools:text="@string/text_genres" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvOverviewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/title_overview"
+            android:textAppearance="?textAppearanceHeadline5"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tvGenres" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintTop_toBottomOf="@id/tvOverviewTitle"
+            tools:targetApi="o"
+            tools:text="Маленькая Тихиро вместе с мамой и папой переезжают в новый дом. Заблудившись по дороге, они оказываются в странном пустынном городе, где их ждет великолепный пир. Родители с жадностью набрасываются на еду и к ужасу девочки превращаются в свиней, став пленниками злой колдуньи Юбабы, властительницы таинственного мира древних богов и могущественных духов." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvReleaseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?textAppearanceHeadline5"
+            app:layout_constraintTop_toBottomOf="@id/tvOverview"
+            tools:text="@string/text_release_date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

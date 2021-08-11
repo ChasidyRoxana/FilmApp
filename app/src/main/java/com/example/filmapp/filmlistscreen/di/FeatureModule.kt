@@ -18,6 +18,6 @@ val filmListModule = module {
     }
 
     viewModel {
-        FilmListViewModel(get())
+        FilmListViewModel(get(), get())
     }
 }

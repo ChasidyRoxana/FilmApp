@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">FilmApp</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="cd_poster">Постер</string>
     <string name="cd_app_icon">Иконка приложения</string>
+    <string name="title_overview">Обзор</string>
     <string name="text_empty">Здесь пока что ничего нет :с</string>
+    <string name="text_rating">&lt;b>Рейтинг:&lt;/b> %1$s</string>
+    <string name="text_genres">&lt;b>%1$s:&lt;/b> %2$s</string>
+    <string name="text_release_date">&lt;b>Дата премьеры:&lt;/b> %1$s</string>
     <string name="error_message">Что-то пошло не так</string>
+    <string name="action_watch">Смотреть</string>
+
+    <plurals name="plurals_genre">
+        <item quantity="one" tools:ignore="ImpliedQuantity">Жанр</item>
+        <item quantity="few">Жанры</item>
+        <item quantity="many">Жанры</item>
+        <item quantity="other">Жанры</item>
+    </plurals>
 </resources>

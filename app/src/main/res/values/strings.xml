@@ -3,6 +3,16 @@
 
     <string name="cd_poster">Poster</string>
     <string name="cd_app_icon">App icon</string>
+    <string name="title_overview">Overview</string>
     <string name="text_empty">There is nothing here yet :c</string>
+    <string name="text_rating">&lt;b>Rating:&lt;/b> %1$s</string>
+    <string name="text_genres">&lt;b>%1$s:&lt;/b> %2$s</string>
+    <string name="text_release_date">&lt;b>Release date:&lt;/b> %1$s</string>
     <string name="error_message">Something went wrong</string>
+    <string name="action_watch">Watch</string>
+
+    <plurals name="plurals_genre">
+        <item quantity="one">Genre</item>
+        <item quantity="other">Genres</item>
+    </plurals>
 </resources>

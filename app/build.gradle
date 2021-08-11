@@ -84,4 +84,8 @@ dependencies {
     // AdapterDelegates
     def adapter_delegates_version = "4.3.0"
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapter_delegates_version"
+
+    // Cicerone
+    def cicerone_version = "7.1"
+    implementation "com.github.terrakok:cicerone:$cicerone_version"
 }

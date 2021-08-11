@@ -17,6 +17,4 @@ data class FilmApi(
     val videoUrl: String,
     @SerializedName("vote_average")
     val rating: Double,
-    @SerializedName("vote_count")
-    val votersCount: Int
 )

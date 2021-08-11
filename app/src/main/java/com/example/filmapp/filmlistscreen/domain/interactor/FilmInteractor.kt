@@ -1,14 +1,14 @@
 package com.example.filmapp.filmlistscreen.domain.interactor
 
-import com.example.filmapp.filmlistscreen.data.mapToFilmUiList
 import com.example.filmapp.filmlistscreen.data.repository.FilmRepository
-import com.example.filmapp.filmlistscreen.ui.model.FilmUi
+import com.example.filmapp.filmlistscreen.domain.mapToFilmItemList
+import com.example.filmapp.filmlistscreen.ui.model.FilmItem
 
 class FilmInteractor(private val filmRepository: FilmRepository) {
 
-    suspend fun getFilms(): Result<List<FilmUi>> {
+    suspend fun getFilms(): Result<List<FilmItem>> {
         return runCatching {
-            filmRepository.getFilms().mapToFilmUiList()
+            filmRepository.getFilms().mapToFilmItemList()
         }
     }
 }

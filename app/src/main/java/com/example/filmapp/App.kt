@@ -1,6 +1,7 @@
 package com.example.filmapp
 
 import android.app.Application
+import com.example.filmapp.filmdetailscreen.di.filmDetailModule
 import com.example.filmapp.filmlistscreen.di.filmListModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -15,7 +16,9 @@ class App : Application() {
             androidLogger()
             modules(
                 networkModule,
+                ciceroneModule,
                 filmListModule,
+                filmDetailModule,
             )
         }
     }
