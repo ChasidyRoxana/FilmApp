@@ -15,7 +15,9 @@ sealed class UiEvent : Event {
     object OnWatchButtonClicked : UiEvent()
 }
 
-sealed class DataEvent : Event
+sealed class DataEvent : Event {
+    class LoadFilmItem(val filmItem: FilmItem) : DataEvent()
+}
 
 enum class State {
     LOAD,

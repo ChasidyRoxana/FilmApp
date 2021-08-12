@@ -20,6 +20,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FilmListFragment : BaseFragment(R.layout.fragment_film_list) {
 
+    companion object {
+
+        fun newInstance() =
+            FilmListFragment()
+    }
+
     private val viewModel: FilmListViewModel by viewModel()
     private val binding by viewBinding(FragmentFilmListBinding::bind)
     private val filmAdapter = ListDelegationAdapter(

@@ -2,6 +2,7 @@ package com.example.filmapp.filmdetailscreen.ui.fragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.filmapp.R
 import com.example.filmapp.base.BaseFragment
@@ -16,11 +17,46 @@ import com.example.filmapp.util.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class FilmDetailFragment(filmItem: FilmItem? = null) : BaseFragment(R.layout.fragment_film_detail) {
+class FilmDetailFragment : BaseFragment(R.layout.fragment_film_detail) {
+
+    companion object {
+
+        private const val TITLE = "TITLE"
+        private const val OVERVIEW = "OVERVIEW"
+        private const val GENRES = "GENRES"
+        private const val POSTER_URI = "POSTER_URI"
+        private const val VIDEO_URI = "VIDEO_URI"
+        private const val RATING = "RATING"
+        private const val RELEASE_DATE = "RELEASE_DATE"
+
+        fun newInstance(filmItem: FilmItem) = FilmDetailFragment().apply {
+            arguments = bundleOf(
+                TITLE to filmItem.title,
+                OVERVIEW to filmItem.overview,
+                GENRES to filmItem.genres,
+                POSTER_URI to filmItem.posterUrl,
+                VIDEO_URI to filmItem.videoUrl,
+                RATING to filmItem.rating,
+                RELEASE_DATE to filmItem.releaseDate
+            )
+        }
+    }
 
     private val binding by viewBinding(FragmentFilmDetailBinding::bind)
     private val viewModel: FilmDetailViewModel by viewModel {
-        parametersOf(filmItem)
+        parametersOf(
+            with(requireArguments()) {
+                FilmItem(
+                    title = getString(TITLE, ""),
+                    overview = getString(OVERVIEW, ""),
+                    genres = getString(GENRES, ""),
+                    posterUrl = getString(POSTER_URI, ""),
+                    videoUrl = getString(VIDEO_URI, ""),
+                    rating = getString(RATING, ""),
+                    releaseDate = getString(RELEASE_DATE, "")
+                )
+            }
+        )
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
