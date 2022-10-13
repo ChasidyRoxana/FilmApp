@@ -1,20 +1,22 @@
 package com.example.filmapp.filmlistscreen.data.model
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class FilmApi(
-    @SerializedName("genres")
+    @Json(name = "genres")
     val genres: List<GenreApi>,
-    @SerializedName("original_title")
+    @Json(name = "original_title")
     val title: String,
-    @SerializedName("overview")
+    @Json(name = "overview")
     val overview: String,
-    @SerializedName("release_date")
+    @Json(name = "release_date")
     val releaseDate: String,
-    @SerializedName("poster_path")
+    @Json(name = "poster_path")
     val posterUrl: String,
-    @SerializedName("video")
+    @Json(name = "video")
     val videoUrl: String,
-    @SerializedName("vote_average")
+    @Json(name = "vote_average")
     val rating: Double,
 )
