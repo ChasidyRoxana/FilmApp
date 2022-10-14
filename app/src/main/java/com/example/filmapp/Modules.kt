@@ -4,6 +4,8 @@ import com.example.filmapp.filmlistscreen.data.network.FilmApiService
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.NavigatorHolder
 import com.github.terrakok.cicerone.Router
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module
@@ -29,7 +31,13 @@ val networkModule = module {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(get())
-            .addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(MoshiConverterFactory.create(get()))
+            .build()
+    }
+
+    single<Moshi> {
+        Moshi.Builder()
+            .addLast(KotlinJsonAdapterFactory())
             .build()
     }
 
